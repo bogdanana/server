@@ -1,0 +1,10 @@
+{
+    "esversion": 8,
+    "browser": true,
+    "strict": false,
+    "camelcase": true,
+    "indent": 2,
+    "jquery": true,
+    "node": true,
+    "devel": true
+}
