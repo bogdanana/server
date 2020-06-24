@@ -1,48 +1,43 @@
-// /* Задания на урок:
+window.addEventListener('DOMContentLoaded', () => {
+      
+      //Modal 
 
-// 1) Удалить все рекламные блоки со страницы (правая часть сайта)
+      const modalTrigger = document.querySelectorAll('[data-modal]'),
+            modal = document.querySelector('.modal'),
+            modalCloseBtn = document.querySelector('[data-close]');
+      console.log(modalTrigger);
 
-// 2) Изменить жанр фильма, поменять "комедия" на "драма"
+      function openModal() {
+            event.preventDefault();
+            modal.classList.add('show');
+            modal.classList.remove('hide');
+            document.body.style.overflow = 'hidden';
+            clearInterval(modalTimerId);
+            return false;
+      }
 
-// 3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
-// Реализовать только при помощи JS
+      modalTrigger.forEach(btn => {
+            btn.addEventListener('click', openModal);
+      });
 
-// 4) Список фильмов на странице сформировать на основании данных из этого JS файла.
-// Отсортировать их по алфавиту 
+      function closeModal() {
+            modal.classList.remove('show');
+            modal.classList.add('hide');
+            document.body.style.overflow = '';
+      }
 
-// 5) Добавить нумерацию выведенных фильмов */
+      modalCloseBtn.addEventListener('click', closeModal);
 
-// 'use strict';
+      modal.addEventListener('click', (e) => {
+            if (e.target == modal) {
+                  closeModal();
+            }
+      });
 
-// const movieDB = {
-//     movies: [
-//         "Логан",
-//         "Лига справедливости",
-//         "Ла-ла лэнд",
-//         "Одержимость",
-//         "Скотт Пилигрим против..."
-//     ]
-// };
+      document.addEventListener('keydown', (e) => {
+            if (e.code === 'Escape' && modal.classList.contains('show')) {
+                  closeModal();
+            }
+      });
 
-// const adv = document.querySelectorAll('.promo__adv img'),
-//     poster = document.querySelector('.promo__bg'),
-//     genre = poster.querySelector('.promo__genre'),
-//     movieList = document.querySelector('.promo__interactive-list');
-
-// adv.forEach(item => {
-//     item.remove();
-// });
-
-// genre.textContent = "Драма";
-
-// poster.style.backgroundImage = 'url("img/bg.jpg")';
-
-// movieList.innerHTML = "";
-// movieDB.movies.sort();
-// movieDB.movies.forEach((film, i) => {
-//     movieList.innerHTML += `
-//     <li class="promo__interactive-item">${i+1} ${film}
-//         <div class="delete"></div>
-//      </li>
-//     `;
-// });
+});
