@@ -1,38 +1,120 @@
-* {
-  box-sizing: border-box;
+.header {
+  background: #e2d9d0 url('../img/background.jpg') no-repeat center top / cover;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 470px;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif; }
+  font-size: 16px;
+  color: #000;
+}
 
-.header {
-  height: 40px;
-  display: inline-block;
-  width: 100%; }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
 
-.promo {
-  height: 1200px;
-  display: inline-block;
-  width: 100%; }
-  .promo__bg {
-    height: 1000px;
-    background: url("../img/bg1.jpg");
-    background-position: top;
-    padding: 107px 0 0 61px; }
-  .promo__faq {
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 56px;
-    color: #FFD500;
-    text-align: center;
-    background: #212121; }
-    .promo__faq-item {
-      display: block;
-      font-size: 28px;
-      line-height: 33px;
-      color: #D6D9DC;
-      text-decoration: none;
-      font-weight: 300;
-      padding-left: 40px;
-      margin-top: 18px; }
+h1{
+  font-size: 60px;
+  letter-spacing: 0.25em;
+  border-top: 3px solid #8fbbbe;
+  border-bottom: 3px solid #8fbbbe;
+  width: 500px;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
 
-/*# sourceMappingURL=style.min.css.map */
+h3 {
+  color: #4c4c4c;
+  font-size: 18px;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 30px;
+}
+.container {
+  width: auto;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mail {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.offer {
+  margin-top: 540px;
+  text-align: center;
+  letter-spacing: 0.11;
+}
+
+.offer p{
+  font-size: 30px;
+}
+.pic {
+  background: url("../img/ecow.jpg") no-repeat center top;
+  height: 700px;
+  width: 600px;
+  padding-left: 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contains{
+  width: 670px;
+  padding-right: 30px;
+  padding-top: 100px;
+}
+
+.contains p { 
+  color: #4c4c4c;
+  line-height: 1.5em;
+}
+
+li {
+  color: #4c4c4c;
+  line-height: 1.5em;
+}
+
+.btn {
+  background: #fe0202;
+  color: #fff;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 0;
+  display: block;
+  margin-top: 60px;
+}
+
+.about .container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.heading {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.heading p {
+  color: #4c4c4c;
+}
+
+.colors {
+  background: #f6f6f6;
+}
