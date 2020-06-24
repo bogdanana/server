@@ -200,6 +200,9 @@ td p {
   color: #fe0202;
 }
 
+
+/* Modal */
+
 .modal {
   position: fixed;
   padding: 0;
@@ -291,9 +294,9 @@ td p {
   }
 }
 
+/* Slider */
+
 .offer__slider {
-  /* 
-  align-items: flex-end */
   width: 650px;
   margin-top: 200px;
   display: flex;
