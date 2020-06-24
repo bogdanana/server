@@ -38,7 +38,7 @@ h2 {
   font-size: 30px;
 }
 .container {
-  width: auto;
+  width: 1170px;
   margin: 0 auto;
 }
 
@@ -78,6 +78,7 @@ h2 {
   width: 670px;
   padding-right: 30px;
   padding-top: 100px;
+  padding-left: 30px;
 }
 
 .contains p { 
@@ -109,6 +110,7 @@ li {
 .heading {
   padding-top: 40px;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .heading p {
@@ -117,4 +119,70 @@ li {
 
 .colors {
   background: #f6f6f6;
+  padding-bottom: 50px;
+}
+
+.items ul, li {
+  display:block;
+  padding: 0;
+  margin: 0;
+}
+
+.items {
+display: flex;
+justify-content: space-between;
+}
+
+.items li {
+  width: 280px;
+  height: 280px;
+}
+
+
+
+.footer {
+  background: #222;
+  color: #9c9c9c;
+  font-size: 12px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.socials a{
+  color: #9c9c9c;
+  font-size: 14px;
+  margin-right: 25px;
+}
+
+.socials li:last-child a{
+  margin-right: 0;
+}
+
+.socials a:hover {
+  color: #fe0202;
+}
+
+@media screen and (max-width:1200px) {
+  .container {
+    width: 768px;
+  }
+
+  .pic {
+    display:none;
+  }
+
+  .contains {
+    width: auto;
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  .btn {
+
+  }
 }
