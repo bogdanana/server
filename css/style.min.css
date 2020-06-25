@@ -69,9 +69,18 @@ h2 {
 }
 
 .mail {
-  color: #fff;
+  color: rgb(0, 88, 77);
   text-decoration: none;
   font-size: 14px;
+}
+
+.slogan {
+  padding-left: 900px;
+  padding-top: 50px;
+}
+
+.slogan h2 {
+  font-size: 40px;
 }
 
 .offer {
@@ -361,6 +370,10 @@ td p {
     margin-bottom: 40px;
   }
 
+  .slogan {
+    display: none;
+  }
+
   .contains {
     width: 500px;
     padding-top: 50px;
@@ -397,6 +410,11 @@ td p {
     width: 70px;
     height: 70px;
   }
+
+  .offer__slider {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -429,6 +447,11 @@ td p {
   .nav img{
     width: 50px;
     height: 50px;
+  }
+
+  .offer__slider {
+    width: 380px;
+    height: 380px;
   }
 }
 
@@ -468,6 +491,11 @@ td p {
   .modal__content {
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .offer__slider {
+    width: 280px;
+    height: 280px;
   }
 }
 
