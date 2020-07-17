@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const modalTrigger = document.querySelectorAll('[data-modal]'),
             modal = document.querySelector('.modal');
-      
+
 
       function openModal() {
             event.preventDefault();
@@ -38,7 +38,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
       });
 
-      
+
 
       //Slider
 
@@ -186,6 +186,11 @@ window.addEventListener('DOMContentLoaded', () => {
                   closeModal();
             }, 4000);
       }
+
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json));
+
 
 
 });
