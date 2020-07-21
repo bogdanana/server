@@ -125,7 +125,6 @@ li {
 
 .btn {
   background: #fe0202;
-  /* border: 1px solid rgb(0, 0, 0); */
   box-shadow: 0 4px 15px rgba(189, 21, 21, 0.479);
   color: #fff;
   width: 200px;
@@ -136,6 +135,21 @@ li {
   margin-top: 60px;
   outline: 0;
   cursor: pointer;
+}
+
+.btn__disabled {
+  background: #777474;
+  box-shadow: 0 4px 15px #777474;
+  color: #fff;
+  width: 200px;
+  text-decoration: none;
+  text-align: center;
+  padding: 12px 0;
+  display: block;
+  margin-top: 60px;
+  outline: 0;
+  cursor: pointer;
+  pointer-events: none
 }
 
 .about .container {
@@ -278,11 +292,17 @@ td p {
   outline: 0
 }
 
-.modal .btn {
+ .modal .btn {
   display: block;
   width: 280px;
   margin: 0 auto
-}
+} 
+
+ .modal .btn__disabled {
+  display: block;
+  width: 280px;
+  margin: 0 auto
+} 
 
 .show {
   display: block

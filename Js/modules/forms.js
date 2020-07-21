@@ -4,6 +4,7 @@ function forms() {
 
       const forms = document.querySelectorAll('form');
       const btn = document.querySelector('.modal__content .btn');
+      const inputs = document.querySelectorAll('input');
 
       btn.setAttribute('type', "submit");
 
@@ -16,6 +17,29 @@ function forms() {
       forms.forEach(item => {
             postData(item);
       });
+
+      inputs.forEach(item => {
+            validation(item);
+      });
+
+
+      // Validation
+      
+      function validation (input) {
+            input.addEventListener('input', (e) => {
+                  if (input.value.match(/\D/g)) {
+                        input.style.border = '1px solid red';
+                        btn.classList.add('btn__disabled');
+                        btn.classList.remove('btn');
+                  }else{
+                        input.style.border = 'none';
+                        btn.classList.add('btn');
+                        btn.classList.remove('btn__disabled');
+                  }
+            });
+      }
+     
+
 
       function postData(form) {
             form.addEventListener('click', (e) => {
