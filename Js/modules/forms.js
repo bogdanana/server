@@ -4,24 +4,31 @@ function forms() {
 
       const forms = document.querySelectorAll('form');
       const btn = document.querySelector('.modal__content .btn');
-      const inputs = document.querySelectorAll('input');
-      const name = document.querySelector('[name=name]');
-      console.log(name);
+      const inputs = document.querySelectorAll('.modal__content input');
+      const nameInput = document.querySelector('[name=name]');
+      const phoneInput = document.querySelector('[name=phone]');
+      const postInput = document.querySelector('[name=postoffice]');
 
       btn.setAttribute('type', "submit");
 
       const message = {
             loading: 'img/form/original.svg',
             success: 'Мы с вами скоро свяжемся!',
-            failure: 'что то пошло не так...'
+            failure: 'что то пошло не так...',
+            validation: 'Заполните все формы!'
       };
 
       forms.forEach(item => {
             postData(item);
       });
 
-      function checkBtn() {
-            if (btn.hasAttribute("data-invalid")) {
+      inputs.forEach(item => {
+            validation(item);
+      });
+
+      function confirmValidation() {
+            if (nameInput.hasAttribute('data-invalid') && phoneInput.hasAttribute('data-invalid') && postInput.hasAttribute('data-invalid')) {
+                  console.log(nameInput.hasAttribute('data-invalid') && nameInput.hasAttribute('data-invalid') && nameInput.hasAttribute('data-invalid'));
                   btn.classList.add('btn__disabled');
                   btn.classList.remove('btn');
             } else {
@@ -30,17 +37,22 @@ function forms() {
             }
       }
 
-      name.addEventListener('input', (e) => {
-            e.preventDefault();
-            if (name.value.match(/\D/g)) {
-                  name.style.border = '1px solid red';
-                  btn.setAttribute('data-invalid', 'data-invalid');
-            } else {
-                  name.style.border = 'none';
-                  btn.removeAttribute('data-invalid', 'data-invalid');
-            }
-            checkBtn();
-      });
+
+
+      function validation(input) {
+            input.addEventListener('input', (e) => {
+                  e.preventDefault();
+                  if (input.value.match(/\D/g)) {
+                        input.style.border = '1px solid red';
+                        input.setAttribute("data-invalid", "data-invalid");
+                        confirmValidation();
+                  } else {
+                        input.style.border = 'none';
+                        input.removeAttribute("data-invalid");
+                        confirmValidation();
+                  }
+            });
+      }
 
       // inputs.forEach(item => {
       //       validation(item, validationForm);
