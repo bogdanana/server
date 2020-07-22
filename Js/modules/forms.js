@@ -5,6 +5,8 @@ function forms() {
       const forms = document.querySelectorAll('form');
       const btn = document.querySelector('.modal__content .btn');
       const inputs = document.querySelectorAll('input');
+      const name = document.querySelector('[name=name]');
+      console.log(name);
 
       btn.setAttribute('type', "submit");
 
@@ -18,27 +20,80 @@ function forms() {
             postData(item);
       });
 
-      inputs.forEach(item => {
-            validation(item);
+      function checkBtn() {
+            if (btn.hasAttribute("data-invalid")) {
+                  btn.classList.add('btn__disabled');
+                  btn.classList.remove('btn');
+            } else {
+                  btn.classList.add('btn');
+                  btn.classList.remove('btn__disabled');
+            }
+      }
+
+      name.addEventListener('input', (e) => {
+            e.preventDefault();
+            if (name.value.match(/\D/g)) {
+                  name.style.border = '1px solid red';
+                  btn.setAttribute('data-invalid', 'data-invalid');
+            } else {
+                  name.style.border = 'none';
+                  btn.removeAttribute('data-invalid', 'data-invalid');
+            }
+            checkBtn();
       });
 
+      // inputs.forEach(item => {
+      //       validation(item, validationForm);
+      // });
 
-      // Validation
-      
-      function validation (input) {
-            input.addEventListener('input', (e) => {
-                  if (input.value.match(/\D/g)) {
-                        input.style.border = '1px solid red';
-                        btn.classList.add('btn__disabled');
-                        btn.classList.remove('btn');
-                  }else{
-                        input.style.border = 'none';
-                        btn.classList.add('btn');
-                        btn.classList.remove('btn__disabled');
-                  }
-            });
-      }
-     
+      // function validationForm() {
+      //       console.log('Hi');
+      //        console.log(isValid());
+      //       if (!isValid()) {
+      //             btn.classList.add('btn');
+      //             btn.classList.remove('btn__disabled');
+      //       } else {
+      //             btn.classList.add('btn__disabled');
+      //             btn.classList.remove('btn');
+      //       }
+      // }
+
+      // function isValid() {
+      //       inputs.forEach(item => {
+      //             if (item.hasAttribute("data-invalid")) {
+      //                   console.log('test');
+      //                   return false;
+
+      //             } else {
+      //                   console.log('noTest');
+      //                   return true;
+      //             }
+      //       });
+      // }
+
+      // function validation(input, callback) {
+      //       input.addEventListener('input', (e) => {
+      //             if (input.value.match(/\D/g)) {
+      //                   input.style.border = '1px solid red';
+      //                   btn.classList.add('data-invalid');
+      //             } else {
+      //                   input.style.border = 'none';
+      //                   btn.classList.remove('data-invalid');
+      //             }
+      //       });
+      //       callback();
+      // }
+
+
+
+
+
+
+
+
+
+
+
 
 
       function postData(form) {
