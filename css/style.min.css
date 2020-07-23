@@ -523,3 +523,10 @@ td p {
   }
 }
 
+[data-invalid=data-invalid] {
+  border: 1px solid red;
+}
+
+[data-valid=data-valid] {
+  border: 1px solid green;
+}

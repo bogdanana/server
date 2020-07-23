@@ -4,10 +4,8 @@ function forms() {
 
       const forms = document.querySelectorAll('form');
       const btn = document.querySelector('.modal__content .btn');
-      const inputs = document.querySelectorAll('.modal__content input');
       const nameInput = document.querySelector('[name=name]');
       const phoneInput = document.querySelector('[name=phone]');
-      const postInput = document.querySelector('[name=postoffice]');
 
       btn.setAttribute('type', "submit");
 
@@ -15,97 +13,49 @@ function forms() {
             loading: 'img/form/original.svg',
             success: 'Мы с вами скоро свяжемся!',
             failure: 'что то пошло не так...',
-            validation: 'Заполните все формы!'
       };
 
       forms.forEach(item => {
             postData(item);
       });
 
-      inputs.forEach(item => {
-            validation(item);
-      });
-
       function confirmValidation() {
-            if (nameInput.hasAttribute('data-invalid') && phoneInput.hasAttribute('data-invalid') && postInput.hasAttribute('data-invalid')) {
-                  console.log(nameInput.hasAttribute('data-invalid') && nameInput.hasAttribute('data-invalid') && nameInput.hasAttribute('data-invalid'));
-                  btn.classList.add('btn__disabled');
-                  btn.classList.remove('btn');
-            } else {
-                  btn.classList.add('btn');
+            if (nameInput.hasAttribute('data-valid') && phoneInput.hasAttribute('data-valid')) {
                   btn.classList.remove('btn__disabled');
+                  btn.classList.add('btn');
+            } else {
+                  btn.classList.remove('btn');
+                  btn.classList.add('btn__disabled');
             }
       }
 
+      nameInput.addEventListener('input', () => {
+            if (!nameInput.value) {
+                  nameInput.setAttribute("data-invalid", "data-invalid");
+                  nameInput.removeAttribute("data-valid");
+                  confirmValidation();
+            } else {
+                  nameInput.setAttribute("data-valid", "data-valid");
+                  nameInput.removeAttribute("data-invalid");
+                  confirmValidation();
+            }
+      });
 
-
-      function validation(input) {
-            input.addEventListener('input', (e) => {
-                  e.preventDefault();
-                  if (input.value.match(/\D/g)) {
-                        input.style.border = '1px solid red';
-                        input.setAttribute("data-invalid", "data-invalid");
-                        confirmValidation();
-                  } else {
-                        input.style.border = 'none';
-                        input.removeAttribute("data-invalid");
-                        confirmValidation();
-                  }
-            });
-      }
-
-      // inputs.forEach(item => {
-      //       validation(item, validationForm);
-      // });
-
-      // function validationForm() {
-      //       console.log('Hi');
-      //        console.log(isValid());
-      //       if (!isValid()) {
-      //             btn.classList.add('btn');
-      //             btn.classList.remove('btn__disabled');
-      //       } else {
-      //             btn.classList.add('btn__disabled');
-      //             btn.classList.remove('btn');
-      //       }
-      // }
-
-      // function isValid() {
-      //       inputs.forEach(item => {
-      //             if (item.hasAttribute("data-invalid")) {
-      //                   console.log('test');
-      //                   return false;
-
-      //             } else {
-      //                   console.log('noTest');
-      //                   return true;
-      //             }
-      //       });
-      // }
-
-      // function validation(input, callback) {
-      //       input.addEventListener('input', (e) => {
-      //             if (input.value.match(/\D/g)) {
-      //                   input.style.border = '1px solid red';
-      //                   btn.classList.add('data-invalid');
-      //             } else {
-      //                   input.style.border = 'none';
-      //                   btn.classList.remove('data-invalid');
-      //             }
-      //       });
-      //       callback();
-      // }
-
-
-
-
-
-
-
-
-
-
-
+      phoneInput.addEventListener('input', () => {
+            if (phoneInput.value.match(/\D/g)) {
+                  phoneInput.setAttribute("data-invalid", "data-invalid");
+                  phoneInput.removeAttribute("data-valid");
+                  confirmValidation();
+            } else if(!phoneInput.value) {
+                  phoneInput.setAttribute("data-invalid", "data-invalid");
+                  phoneInput.removeAttribute("data-valid");
+                  confirmValidation();
+            } else {
+                  phoneInput.setAttribute("data-valid", "data-valid");
+                  phoneInput.removeAttribute("data-invalid");
+                  confirmValidation();
+            }
+      });
 
 
       function postData(form) {
