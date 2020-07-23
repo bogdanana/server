@@ -24,11 +24,11 @@ window.addEventListener('DOMContentLoaded', () => {
         controlsContainer: "#customize-controls",
         responsive: {
             640: {
-                items: 2,
+                items: 1,
             },
             
             768: {
-                items: 3,
+                items: 2,
             }
         }
     
