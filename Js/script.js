@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     tns({
         container: '.my-slider',
         loop: true,
-        items: 1,
+        items: 2,
         slideBy: 'page',
         nav: false,    
         autoplay: true,
@@ -22,11 +22,11 @@ window.addEventListener('DOMContentLoaded', () => {
         controlsContainer: "#customize-controls",
         responsive: {
             640: {
-                items: 1,
+                items: 3,
             },
             
             768: {
-                items: 2,
+                items: 3,
             }
         }
     
