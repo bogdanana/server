@@ -299,11 +299,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const forms = __webpack_require__ (/*! ./modules/forms */ "./js/modules/forms.js");
     const modal = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
-    // const slider = require('./modules/slider');
 
     forms();
     modal();
-    // slider();
 
     Object(tiny_slider_src_tiny_slider__WEBPACK_IMPORTED_MODULE_0__["tns"])({
         container: '.my-slider',
@@ -330,7 +328,6 @@ window.addEventListener('DOMContentLoaded', () => {
       });
     
     
-
 });
 
 /***/ }),
