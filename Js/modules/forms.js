@@ -42,7 +42,7 @@ function forms() {
       });
 
       phoneInput.addEventListener('input', () => {
-            if (phoneInput.value.match(/\D/g)) {
+            if (phoneInput.value.match(/^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$ /)) {
                   phoneInput.setAttribute("data-invalid", "data-invalid");
                   phoneInput.removeAttribute("data-valid");
                   confirmValidation();
