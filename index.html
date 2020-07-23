@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
     <script src="https://kit.fontawesome.com/4cd1c012df.js" crossorigin="anonymous"></script>
 </head>
 
@@ -58,12 +59,8 @@
     </section>
     <section class="colors">
         <class class="container">
-            <div class="heading">
-                <h2>Нaши наборы</h2>
-                <p>Также можно заказать дополнительные секции</p>
-
-            </div>
-            <div class="offer__slider">
+            
+            <!-- <div class="offer__slider">
                 <div class="offer__slider-wrapper">
                     <div class="offer__slider-inner">
                         <div class="offer__slide">
@@ -86,7 +83,62 @@
                 <div class="offer__slider-next">
                     <img src="icons/next.svg" alt="next">
                 </div>
+            </div> -->
+
+            <div class="heading">
+                <h2>Нaши наборы</h2>
+                <p>Также можно заказать дополнительные секции</p>
+
             </div>
+            <div class="slider-container">
+                <ul class="controls" id="customize-controls" aria-label="Carousel Navigation" tabindex="0">
+                    <li class="prev" data-controls="prev" aria-controls="customize" tabindex="-1">
+                        <i class="fas fa-angle-left fa-5x"></i>
+                    </li>
+                    <li class="next" data-controls="next" aria-controls="customize" tabindex="-1">
+                        <i class="fas fa-angle-right fa-5x"></i>          
+                    </li>
+                </ul>
+                <div class="my-slider">
+                    <div class="slider-item">
+                        <div class="card">                
+                            <img data-src="img/slider/item1.jpg" alt="pepper" class="tns-lazy-img">
+                            <h2>Title 1</h2>
+                            <p class="card_description">Loresm ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-item">
+                        <div class="card">                
+                            <img data-src="img/slider/item2.jpg" alt="food" class="tns-lazy-img"> 
+                            <h2>Title 2</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-item">
+                        <div class="card">                
+                            <img data-src="img/slider/item3.jpg" alt="oil" class="tns-lazy-img">
+                            <h2>Title 3</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+                        </div>
+                    </div>
+                    <div class="slider-item">
+                        <div class="card">                
+                            <img data-src="img/slider/item4.jpg" alt="paprika" class="tns-lazy-img">
+                            <h2>Title 4</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, voluptas!</p>
+                        </div>
+                    </div>
+                </div>    
+            </div>
+
+
+
+
+
+
+
         </class>
     </section>
     <section class="team">
@@ -123,7 +175,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" rel="nofollow">
+                        <a href="#" target="_blank" rel=f"nofollow">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
@@ -143,11 +195,13 @@
                 <form action="#">
                     <div data-close class="modal__close">&times;</div>
                     <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
-                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input" data-invalid="data-invalid">
-                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input" data-invalid="data-invalid">
+                    <input required placeholder="Ваше имя" name="name" type="text" class="modal__input"
+                        data-invalid="data-invalid">
+                    <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input"
+                        data-invalid="data-invalid">
                     <input required placeholder="Ваше отделение новой почты" name="postoffice" type="text"
                         class="modal__input">
-                        <a href="#" class="btn">Перезвонить мне</a>
+                    <a href="#" class="btn">Перезвонить мне</a>
                 </form>
             </div>
         </div>
