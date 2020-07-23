@@ -99,18 +99,59 @@ function forms() {
 
       const forms = document.querySelectorAll('form');
       const btn = document.querySelector('.modal__content .btn');
+      const nameInput = document.querySelector('[name=name]');
+      const phoneInput = document.querySelector('[name=phone]');
 
       btn.setAttribute('type', "submit");
 
       const message = {
             loading: 'img/form/original.svg',
             success: 'Мы с вами скоро свяжемся!',
-            failure: 'что то пошло не так...'
+            failure: 'что то пошло не так...',
       };
 
       forms.forEach(item => {
             postData(item);
       });
+
+      function confirmValidation() {
+            if (nameInput.hasAttribute('data-valid') && phoneInput.hasAttribute('data-valid')) {
+                  btn.classList.remove('btn__disabled');
+                  btn.classList.add('btn');
+            } else {
+                  btn.classList.remove('btn');
+                  btn.classList.add('btn__disabled');
+            }
+      }
+
+      nameInput.addEventListener('input', () => {
+            if (!nameInput.value) {
+                  nameInput.setAttribute("data-invalid", "data-invalid");
+                  nameInput.removeAttribute("data-valid");
+                  confirmValidation();
+            } else {
+                  nameInput.setAttribute("data-valid", "data-valid");
+                  nameInput.removeAttribute("data-invalid");
+                  confirmValidation();
+            }
+      });
+
+      phoneInput.addEventListener('input', () => {
+            if (phoneInput.value.match(/\D/g)) {
+                  phoneInput.setAttribute("data-invalid", "data-invalid");
+                  phoneInput.removeAttribute("data-valid");
+                  confirmValidation();
+            } else if(!phoneInput.value) {
+                  phoneInput.setAttribute("data-invalid", "data-invalid");
+                  phoneInput.removeAttribute("data-valid");
+                  confirmValidation();
+            } else {
+                  phoneInput.setAttribute("data-valid", "data-valid");
+                  phoneInput.removeAttribute("data-invalid");
+                  confirmValidation();
+            }
+      });
+
 
       function postData(form) {
             form.addEventListener('click', (e) => {
