@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
         items: 2,
         slideBy: 'page',
         nav: false,    
-        autoplay: true,
+        autoplay: false,
         speed: 400,
         autoplayButtonOutput: false,
         mouseDrag: true,
@@ -31,6 +31,4 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     
       });
-    
-    
 });
