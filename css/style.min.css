@@ -6,7 +6,7 @@
 }
 
 .header {
-  background: #e2d9d0 url('../img/background.jpg') no-repeat center top / cover;
+  background: #e2d9d0 url('../server/src/main/resources/static/img/background.jpg') no-repeat center top / cover;
   color: #fff;
   padding-top: 10px;
   padding-bottom: 470px;
@@ -96,7 +96,7 @@ h2 {
 }
 
 .pic {
-  background: url("../img/ecow.jpg") no-repeat center top;
+  background: url("../server/src/main/resources/static/img/ecow.jpg") no-repeat center top;
   height: 700px;
   width: 600px;
   padding-left: 30px;
